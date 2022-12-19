@@ -1,4 +1,4 @@
-package driverMethods_techpro;
+package day01_DriverMethods;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
