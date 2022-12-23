@@ -32,8 +32,19 @@ public class P04 {
         WebElement result = driver.findElement(By.xpath("//*[@id=\"result-stats\"]"));
         System.out.println(result.getText());
 
-//      sonuc sayisinin 10 milyon’dan fazla oldugunu test edin 8 Sayfayi kapatin
+//      sonuc sayisinin 10 milyon’dan fazla oldugunu test edin
+        String number = result.getText().split(" ")[1].replaceAll("\\D","");
+//      Yaklaşık 138.000.000 sonuç bulundu --> [Yaklaşık,138.000.000,sonuç,bulundu]
+//      \\D ile rakam olmayan herseyi sildik.   --> 138000000
 
+        int onMilyon = 10000000;
+        Integer intNumber = Integer.valueOf(number);
+        if (intNumber>onMilyon){
+            System.out.println("Result PASSED");
+        }else System.out.println("Result FAILED");
+
+//      8 Sayfayi kapatin
+        driver.close();
     }
 
 }
